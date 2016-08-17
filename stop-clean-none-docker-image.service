@@ -1,0 +1,6 @@
+[Unit]
+Description=stop-clean-none-docker-image.service
+
+[Service]
+ExecStart=-/bin/sh -c "/bin/ps -ef|/bin/grep 'docker rmi'|/bin/grep -v grep|/bin/tr -s ' '|/bin/cut -d' ' -f2|/bin/xargs /bin/kill -9"
+Type=oneshot

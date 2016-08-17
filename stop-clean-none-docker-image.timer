@@ -1,0 +1,9 @@
+[Unit]
+Description=Stop clean none tag docker images every day at 06:00 AM
+
+[Timer]
+OnCalendar=06:00
+Persistent=true
+
+[Install]
+WantedBy=local.target
