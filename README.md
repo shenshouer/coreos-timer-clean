@@ -1,5 +1,7 @@
 # coreos-timer-clean
 
+**Use shell in service file**
+
 put all unit files to /etc/systemd/system/ on CoreOS
 
 ```
