@@ -1,9 +1,7 @@
 [Unit]
-Description=Run clean none tag docker images every day at 0 AM
+Description=start-clean-none-docker-image.service
 
-[Timer]
-OnCalendar=00:00
-Persistent=true
-
-[Install]
-WantedBy=local.target
+[Service]
+ExecStartPre=-/bin/sh -c "/bin/ps -ef|/bin/grep 'docker rmi'|/bin/grep -v grep|/bin/tr -s ' '|/bin/cut -d' ' -f2|/bin/xargs /bin/kill -9"
+ExecStart=-/bin/sh -c "/bin/docker images|/bin/grep none|/bin/tr -s ' '|/bin/cut -d' ' -f3|/bin/xargs /bin/docker rmi"
+Type=oneshot
