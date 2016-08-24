@@ -2,6 +2,8 @@
 
 **Use shell in service file**
 
+The [https://github.com/shenshouer/docker-clean](go version in docker)
+
 put all unit files to /etc/systemd/system/ on CoreOS
 
 ```
