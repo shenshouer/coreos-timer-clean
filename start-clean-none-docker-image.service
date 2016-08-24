@@ -1,14 +1,4 @@
 [Unit]
-Description=Run clean none tag docker images every day at 0 AM
-
-[Timer]
-OnCalendar=00:00
-Persistent=true
-
-[Install]
-WantedBy=local.target
-yooadmin@worker-10-11-3-116 /etc/systemd/system $ cat start-clean-none-docker-image.service
-[Unit]
 Description=start-clean-none-docker-image.service
 
 [Service]
